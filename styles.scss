@@ -1,0 +1,14 @@
+header {
+  display: flex;
+  color: var(--red-dark);
+  .title {
+      color: crimson;
+      & ~ p {
+          color: black;
+          @include flagProps(3, 'dark');
+      }
+      & .bold{
+          font-weight: bold
+      }
+  }
+}

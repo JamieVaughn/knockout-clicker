@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knockout Project</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Knockout</h1>
+  <!-- The name is <span data-bind="text: personName"></span>
+  The name is <span data-bind="text: fullName()"></span> -->
+<!-- 
+  <div>You've Clicked <span data-bind="text: numberOfClicks"></span> times</div>
+  <button data-bind='click: registerClick, disable: hasClickedTooMuch'>Click Me</button>
+  <div data-bind='visible: hasClickedTooMuch'>You've Click too much! Give it a rest!</div>
+
+  <button data-bind='click: resetClicks'>Reset the Clicks</button> -->
+
+  <hr>
+  <ul id="listView" data-bind='foreach: dragonList'>
+    <li data-bind='text: $data.type, click: $parent.setCurrentDragon'></li>
+  </ul>
+
+  <main id="mainView">
+    <div data-bind="with: currentDragon()">
+      <div data-bind="click: $parent.incrementCount">
+        <h2 data-bind='text: type'></h2>
+        <span data-bind='text: img'></span>
+        <span data-bind="text: clicks"></span>
+      </div>
+    </div>
+  </main>
+
+
+  <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.js'></script>
+  <script src='index.js'></script>
+</body>
+</html>
